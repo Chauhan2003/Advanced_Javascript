@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Events</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="event">
+        <div class="container">
+            <h1 class="container-heading">Inline Event</h1>
+            <div class="button-container">
+                <button id="inline-btn1" class="btn" onclick="alert('Inline onclick()')">Button1</button>
+                <button id="inline-btn2" class="btn" onmouseover="alert('Inline onmouseover()')">Button2</button>
+            </div>
+        </div>
+        <div class="container">
+            <h1 class="container-heading">DOM Event</h1>
+            <div class="button-container">
+                <button id="dom-btn1" class="btn">Button1</button>
+                <button id="dom-btn2" class="btn">Button2</button>
+            </div>
+        </div>
+        <div class="container">
+            <h1 class="container-heading">Add Event Listener</h1>
+            <div class="button-container">
+                <button id="add-event-listener-btn1" class="btn">Button1</button>
+                <button id="add-event-listener-btn2" class="btn">Button2</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("dom-btn1").onclick = () => {
+            alert("DOM onclick()");
+        }
+
+        document.getElementById("dom-btn2").onmouseover = () => {
+            alert("DOM onmouserover()");
+        }
+
+        const button1 = document.getElementById("add-event-listener-btn1");
+        const button2 = document.getElementById("add-event-listener-btn2");
+
+        button1.addEventListener("click", () => {
+            alert("add-event-listener click");
+        })
+
+        button2.addEventListener("mouseover", () => {
+            alert("add-event-listener mouseover");
+        })
+    </script>
+</body>
+
+</html>
