@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Project1
+    </title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .rectangle {
+            width: 250px;
+            height: 250px;
+            background-color: yellow;
+        }
+
+        .btn {
+            width: 150px;
+            height: 40px;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            border: none;
+            background-color: red;
+            font-weight: bold;
+            cursor: pointer;
+            color: white;
+        }
+
+        .animation1 {
+            border-radius: 100%;
+            translate: 20rem 0;
+            transition: 1s ease-in-out;
+        }
+
+        .animation2 {
+            border-radius: 100%;
+            translate: -20rem 0;
+            transition: 1s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="rectangle" class="rectangle"></div>
+        <button id="btn" class="btn">Click</button>
+    </div>
+
+    <script>
+        const btnRef = document.getElementById("btn");
+        const rectRef = document.getElementById("rectangle");
+
+        const buttonClick = () => {
+            rectRef.classList.add("animation1");
+        }
+
+        const buttonDoubleClick = () => {
+            rectRef.classList.add("animation2");
+        }
+
+        btnRef.addEventListener('click', buttonClick);
+        btnRef.addEventListener('dblclick', buttonDoubleClick)
+    </script>
+</body>
+
+</html>
