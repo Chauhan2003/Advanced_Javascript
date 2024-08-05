@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Asynchronous Javascript
+    </title>
+</head>
+
+<body>
+    <div id="main">Hello Asynchronous</div>
+
+        <script type="text/javascript">
+            // ----------------------------------------------------------------------------------------------
+            // Javascript setTimeout function:-
+            // ----------------------------------------------------------------------------------------------
+
+            // The setTimeout() method executes a block of code after the specified time. The method executes the code only once.
+
+            // setTimeout(function(callback), timeout(milliseconds));
+
+            // Example 1:-
+            console.log(1);
+            // console.log(2); let make this asynchronous
+            setTimeout(function () {
+                console.log(2);
+            }, 1000);
+            /*
+                setTimeout(function () {
+                    console.log(2);
+                }, 0);
+    
+                now also with this timeout(0) function will execute at the end of the program because the function become asynchronous.
+            */
+            console.log(3);
+
+            // Example 2:-
+            // The setTimeout() method returns the interval id.
+            const intervalId = setTimeout(function () {
+                console.log("Hello Asynchronous!");
+            }, 2000);
+            console.log("Interval id of setTimeout is ", intervalId);
+
+            // Example 2:-
+            /*
+                function printHello() {
+                    console.log("Hy");
+    
+                    setTimeout(printHello, 2000);
+                }
+                printHello();
+    
+                This will print "Hy" every 2 seconds.
+                If you need to execute a function multiple times, it's better to use the setInterval() method.
+            */
+
+            // ----------------------------------------------------------------------------------------------
+            // Javascript setInterval function:-
+            // ----------------------------------------------------------------------------------------------
+
+            // In JavaScript, a block of code can be executed in specified time intervals. These time intervals are called timing events.
+
+            // setInterval(function(callback), timeout(milliseconds));
+            // The setInterval() method returns an intervalID which is a positive integer.
+
+            /*
+                setInterval(function () {
+                    console.log("Hello setInterval");
+                }, 3000);
+            */
+
+            // ----------------------------------------------------------------------------------------------
+            // Javascript clearInterval function:-
+            // ----------------------------------------------------------------------------------------------
+        </script>
+</body>
+
+</html>
