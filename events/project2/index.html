@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Project2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .inputBox {
+            background-color: white;
+            border-radius: 4px;
+            padding-left: 10px;
+            border: none;
+            width: 400px;
+            outline: none;
+            height: 40px;
+            font-size: 18px;
+        }
+
+        .project2 {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        #main {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="project2">
+        <input type="text" placeholder="Type Something" id="inputBox" class="inputBox" />
+        <div id="main"></div>
+    </div>
+
+    <script>
+        const inputBox = document.getElementById("inputBox");
+        const mainText = document.getElementById("main");
+
+        const functionKeyPress = (event) => {
+            console.log(`Key code: ${event.keyCode}`);
+            console.log(`Key: ${event.key}`);
+            mainText.innerText = "Key Code: " + event.keyCode;
+        }
+
+        inputBox.addEventListener("keypress", functionKeyPress);
+    </script>
+</body>
+
+</html>
