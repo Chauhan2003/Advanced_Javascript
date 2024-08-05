@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Asynchronous Project 2
+    </title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #btnContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+            gap: 20px;
+        }
+
+        .btn {
+            width: 120px;
+            height: 40px;
+            background-color: brown;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            outline: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="btnContainer">
+        <button id="start" class="btn">Start</button>
+        <button id="stop" class="btn">Stop</button>
+    </div>
+
+    <script type="text/javascript">
+        const randomColor = () => {
+            const hex = "0123456789ABCDEF";
+            let color = "#";
+
+            for (let i = 0; i < 6; i++) {
+                color += hex[Math.floor(Math.random() * 16)];
+            }
+
+            return color;
+        }
+
+        const startButton = document.getElementById("start");
+        const stopButton = document.getElementById("stop");
+
+        let intervalId;
+
+        const startChangingColor = () => {
+            if (!intervalId) {
+                intervalId = setInterval(function () {
+                    document.body.style.backgroundColor = randomColor();
+                }, 1000);
+            }
+        }
+
+        const stopChangingColor = () => {
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+
+        startButton.addEventListener("click", startChangingColor);
+        stopButton.addEventListener("click", stopChangingColor);
+    </script>
+</body>
+
+</html>
